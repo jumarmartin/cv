@@ -41,10 +41,10 @@
 %Custom commands
 \newcommand{\openitem}[2]{\item[] \textbf{#1:} #2\vspace{2pt}}
 \newcommand{\secheading}[1]{\vspace{2pt}
-  {
-  	\setlength{\FrameSep}{\outerbordwidth}
+	{
+		\setlength{\FrameSep}{\outerbordwidth}
 		\textbf{\large #1}
-  }
+	}
 }
 \newcommand{\secsubheading}[4]{
 \vspace{2pt}
@@ -55,7 +55,6 @@
 }
 
 \newcommand{\secitem}[5]{
-
 	\item[]
 		\secsubheading{#1}{#2}{#3}{#4}
 		\vspace{-10pt}
@@ -65,71 +64,72 @@
 }
 
 %-----------------------------------------------------------
-% the content
+% the document, itself.
 \begin{document}
 
-\begin{tabular*}{7in}{l@{\extracolsep{\fill}}r}
-	\textbf{\Large Jumar A. Martin} & \textbf{\today} \\
-	jumar@jumart.in | +1 (650) 407-9719 & Fourth-Year CS \& Econ Student
-	\vspace{8pt}
-\end{tabular*}
+	\begin{tabular*}{7in}{l@{\extracolsep{\fill}}r}
+		\textbf{\Large Jumar A. Martin} & \textbf{\today} \\
+		jumar@jumart.in | +1 (650) 407-9719 & Fourth-Year CS \& Econ Student
+		\vspace{8pt}
+	\end{tabular*}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\secheading{Education}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{itemize}
-	\secitem{Elon University}
-	{B.S. Computer Science, A.B. Economics}
-	{2019}{2023}
-	{\textbf{Relevant Coursework:} Data Mining \& Machine Learning, Programming Languages, Algorithm Analysis, Database Systems, Organization \& Architeture, Econometrics}
-\end{itemize}
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\secheading{Education}
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\begin{itemize}
+		\secitem{Elon University}
+			{B.S. Computer Science, A.B. Economics}
+			{2019}{2023}
+			{\textbf{Relevant Coursework:} Data Mining \& Machine Learning, Programming Languages, Algorithm Analysis, Database Systems, Organization \& Architeture, Econometrics}
+	\end{itemize}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\secheading{Technical Competencies}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{itemize}
-	\openitem{Technical Competence}{Go, Swift 3+, Git, Python 3.x, Java 8+, PostgreSQL, Redis, \LaTeX}
-	\openitem{Courseadvysr}{A service that was written to challenge—and now aiming to overtake—Elon University’s course search tool by providing better tools to decide which class to take. 
-	I host this service on a bare-metal SaaS server in a docker instance, \textbf{PostgreSQL} for the backend, \textbf{Golang} as the middleware, \textbf{Redis} to serve as a cache and broker authentication requests, and \textbf{ReactJS} as the presentation framework.}
-\end{itemize}
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\secheading{Technical Competencies}
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\begin{itemize}
+		\openitem{Technical Competence}{Go, Swift 3+, Git, Python 3.x, Java 8+, PostgreSQL, Redis, \LaTeX}
+		
+		\openitem{Courseadvysr}{A service that was written to challenge—and now aiming to overtake—Elon University’s course search tool by providing better tools to decide which class to take. 
+		I host this service on a bare-metal SaaS server in a docker instance, \textbf{PostgreSQL} for the backend, \textbf{Golang} as the middleware, \textbf{Redis} to serve as a cache and broker authentication requests, and \textbf{ReactJS} as the presentation framework.}
+	\end{itemize}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\secheading{Employment Experience}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{itemize}
-  \secitem{Software Engineer Intern}
-  	{Cruise | Mapping}
-  	{Aug. 2022}{Present}
-  	{Serving as the ground-truth for the vehicles, the Mapping team spans both product and car side in providing navigation knowledge and intelligence.}
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\secheading{Employment Experience}
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\begin{itemize}
+		\secitem{Software Engineer Intern}
+			{Cruise | Mapping}
+			{Aug. 2022}{Present}
+			{Serving as the ground-truth for the vehicles, the Mapping team spans both product and car side in providing navigation knowledge and intelligence.}
 
-  \secitem{Software Engineer Intern}
-  	{Lyft | Driver Experience--Driver Productivity}
-  	{May 2022}{Aug. 2022}
-  	{Driver Experience aims to win driver preference by providing superior transparency and control. Amongst an 8.8\% increase in driver scheduled rides takeups by implementing an entrypoint in the unified schedule, I drove the prioritized implementation of bringing upfront pay swap notifications to parity with non-upfront pay and implemented new reasons to improve visibility into the reason a driver was swapped.}
+		\secitem{Software Engineer Intern}
+			{Lyft | Driver Experience--Driver Productivity}
+			{May 2022}{Aug. 2022}
+			{Driver Experience aims to win driver preference by providing superior transparency and control. Amongst an 8.8\% increase in driver scheduled rides takeups by implementing an entrypoint in the unified schedule, I drove the prioritized implementation of bringing upfront pay swap notifications to parity with non-upfront pay and implemented new reasons to improve visibility into the reason a driver was swapped.}
 
-	\secitem{Software Development Engineer Intern}
-		{Amazon | Alexa Skills Kit}
-		{Jan. 2022}{Apr. 2022}
-		{As a member of the Vertical Kits team, I extended the Offers product to include the ability to reference by name instead of position, a highly requested feature by end users. This included designing a new schema for third-party partners to provide offer names and custom synonyms while also leveraging the Alexa Voice Service—an internal NLP product—to extend that synonyms list automatically.}
+		\secitem{Software Development Engineer Intern}
+			{Amazon | Alexa Skills Kit}
+			{Jan. 2022}{Apr. 2022}
+			{As a member of the Vertical Kits team, I extended the Offers product to include the ability to reference by name instead of position, a highly requested feature by end users. This included designing a new schema for third-party partners to provide offer names and custom synonyms while also leveraging the Alexa Voice Service—an internal NLP product—to extend that synonyms list automatically.}
 
-	\secitem{Software Engineer}
-		{Celera Technologies}
-		{Jun. 2021}{Jan. 2022}
-		{Using \textbf{Python 3.9}, I architected automated systems that provide the ability to rapidly validate custom Integrated Circuits, generate mission-critical documentaiton for engineers and customers, and on average save 120 hours per week on once-manual tasks.}
+		\secitem{Software Engineer}
+			{Celera Technologies}
+			{Jun. 2021}{Jan. 2022}
+			{Using \textbf{Python 3.9}, I architected automated systems that provide the ability to rapidly validate custom Integrated Circuits, generate mission-critical documentaiton for engineers and customers, and on average save 120 hours per week on once-manual tasks.}
 
-  \secitem{Teaching Assistant}
-  	{Elon University}
-  	{Aug. 2021}{Dec. 2021}
-  	{Served as the only TA for 118 students in the introductory Computer Science course.}
-\end{itemize}
+		\secitem{Teaching Assistant}
+			{Elon University}
+			{Aug. 2021}{Dec. 2021}
+			{Served as the only TA for 118 students in the introductory Computer Science course.}
+	\end{itemize}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\secheading{Extracurricular Activities}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{itemize}
-	\secitem{President}
-	{Elon Society of Computing}
-	{Apr. 2019}{Jan. 2022}
-	{Serving as President of ESC, I transferred ownership of Courseadvysr to the newly-found ESC Student Development Team and continually led that team in developing new features and services, recreated the event planning to allow students to easily follow a Research or Real World-focused track, and expanded ESC’s reach as a strong department-affiliated organization.}
-\end{itemize}
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\secheading{Extracurricular Activities}
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\begin{itemize}
+		\secitem{President}
+		{Elon Society of Computing}
+		{Apr. 2019}{Jan. 2022}
+		{Serving as President of ESC, I transferred ownership of Courseadvysr to the newly-found ESC Student Development Team and continually led that team in developing new features and services, recreated the event planning to allow students to easily follow a Research or Real World-focused track, and expanded ESC’s reach as a strong department-affiliated organization.}
+	\end{itemize}
 \end{document}
