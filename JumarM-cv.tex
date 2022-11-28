@@ -9,28 +9,16 @@
 \newlength{\outerbordwidth}
 \pagestyle{empty}
 \raggedbottom
+\usepackage{fontspec}
+\setmainfont{Avenir}
 \raggedright
 \usepackage[svgnames]{xcolor}
 \usepackage{framed}
 \usepackage{tocloft}
 \usepackage{etoolbox}
-% \usepackage{draftwatermark}
-
-% \SetWatermarkText{DRAFT}
+\usepackage{enumitem}
 
 \robustify\cftdotfill
-
-%Use default sans-serif font
-\renewcommand*\familydefault{\sfdefault} 
-
-
-%-----------------------------------------------------------
-%Edit these values as you see fit
-
-\setlength{\outerbordwidth}{3pt}  % Width of border outside of title bars
-\definecolor{shadecolor}{gray}{0.75}  % Outer background color of title bars (0 = black, 1 = white)
-\definecolor{shadecolorB}{gray}{0.93}  % Inner background color of title bars
-
 
 %-----------------------------------------------------------
 %Margin setup
@@ -47,205 +35,241 @@
 \setlength{\topmargin}{-0.3in}
 \setlength{\topskip}{0in}
 \setlength{\voffset}{0.1in}
+\setlist[itemize]{leftmargin=*}
 
 %-----------------------------------------------------------
 %Custom commands
-\newcommand{\resitem}[1]{\item[] \textbf{--} #1 \vspace{-2pt}}
-\newcommand{\resheading}[1]{\vspace{8pt}
-  {\setlength{\FrameSep}{\outerbordwidth}
-    
-\textbf{\large #1}
-    
-  }
+\newcommand{\openitem}[2]{\item[] \textbf{#1} #2\vspace{2pt}}
+\newcommand{\secheading}[1]{\vspace{2pt}
+	{
+		\setlength{\FrameSep}{\outerbordwidth}
+		\textbf{\large #1}
+	}
 }
-\newcommand{\ressubheading}[3]{
-\begin{tabular*}{6.5in}{l@{\cftdotfill{\cftsecdotsep}\extracolsep{\fill}}r}
-		\textbf{#1} & #3\\
+\newcommand{\secsubheading}[4]{
+\vspace{2pt}
+\begin{tabular*}{6.86in}{l@{\cftdotfill{\cftsecdotsep}\extracolsep{\fill}}r}
+		\textbf{#1} & #3 -- #4\\
 		\textit{#2} \\
-\end{tabular*}\vspace{-6pt}}
-%-----------------------------------------------------------
-
-
-\begin{document}
-\sffamily
-
-\begin{tabular*}{7in}{l@{\extracolsep{\fill}}r}
-\textbf{\Large Jumar Martin} & \textbf{\today} \\
-College First-Year \& Software Engineer & jumar@jumart.in \\
-
-& https://jumart.in \\
 \end{tabular*}
-\\
+}
 
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\resheading{Education}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{itemize}
-
+\newcommand{\secitem}[5]{
 	\item[]
-		\ressubheading{Elon University}{B.S. Computer Science, A.B. Economics}{2019 - 2023}
-
-	\item[]
-
-		\ressubheading{Phillip O. Berry Academy of Technology}{Diploma, NAF Certificate}{2015 - 2019}
-
-\end{itemize}
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\resheading{Employment Experience}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{itemize}
-	\item[]
-		\ressubheading{Resident Assistant}{Elon University Residence Life}{Feburary 2020 - Present}
-	\item[]
-		\ressubheading{Oral Historian}{Elon University Belk Library Archives \& Special Collections}{October 2019 - Present}
-
-	\item[]
-
-		\ressubheading{Founder}{Eclect, Inc.}{November 2017 - 2019}
-			\begin{itemize}
-
-				\resitem{Founded with 2 other high school students, Eclect---which stems from the word eclectic---is a Start-Up company with the intent to change the world, no matter how clich\'e that may sound.}
-
-				\resitem{{\bf Nutra:} Nutra is a service created to improve the way you utilize grocery lists using the power of Machine Learning.}
-
-			\end{itemize}
-	\item[]
-
-		\ressubheading{Intelligence Intern}{Executive Partnership for Integrated Collaboration}{June - August 2018}
-			\begin{itemize}
-
-				\resitem{Learned the Intelligence Cycle, gathered time-sensitive OSINT (Open Source INTelligence) for various projects, and built and serviced tools used within EPIC’s internal processes and external projects.}
-
-				\resitem{{\bf Tools Used:} Python, Maltego, Crunchbase, Dun \& Bradstreet, Salesforce, and other OSINT technologies}
-
-			\end{itemize}
-
-	\item[]
-
-		\ressubheading{Cybersecurity Intern}{Technology Partners Inc. d.b.a Imagine Software}{June - August 2017}
-
-			\begin{itemize}
-
-				\resitem{Tasked with securing the network, cataloging the various amounts of computers, and installing enterprise-grade anti-virus solutions on macOS machines, remotely, as well as various IT-related projects.}
-
-				\resitem{{\bf Tools Used:} SAS \& Python (for analysis of events from the SIEM), Redis, and Node.js}
-
-			\end{itemize}
-\end{itemize}
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\resheading{Extracurriculars}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\begin{itemize}
-	\item[]
-		\ressubheading{Class President}{Elon University Student Government Association}{2019 - Present}
+		\secsubheading{#1}{#2}{#3}{#4}
+		\vspace{-10pt}
 		\begin{itemize}
-			\resitem{Elected President of the Class of 2023 for the 2019-2020 School Year.}
+			\item[]{#5}
 		\end{itemize}
+}
 
-	\item[] 
-		\ressubheading{Member}{Liberal Arts Forum of Elon University}{2020 - Present}
-	
-	\item[]
-		\ressubheading{Member}{Elon Society of Computing}{2020 - Present}
 
-	\item[] 
-		\ressubheading{Club President}{WakeUp! Club}{2016 - 2019}
+%-----------------------------------------------------------
+% the document, itself.
+\begin{document}
 
-		\begin{itemize}
+	\begin{tabular*}{7in}{l@{\extracolsep{\fill}}r}
+		\textbf{\Large Jumar A. Martin} & \textbf{\today} \\
+		jumar@jumart.in | +1 (650) 407-9719 & Fourth-Year CS \& Econ Student
+		\vspace{8pt}
+	\end{tabular*}
 
-			\resitem{Attained the position of Club President for the 2017-2018 and 2018-2019 school year. A school club rooted in helping the community “Wake Up” to the problems that affects each and every member. Primarily backed by the North Carolina chapter of Teach For America.}
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\secheading{Education}
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\begin{itemize}
+		\secitem{Elon University}
+			{B.S. Computer Science, A.B. Economics}
+			{2019}{2023}
+			{\textbf{Relevant Coursework:} Data Mining \& Machine Learning, Programming Languages, Algorithm Analysis, Database Systems, Organization \& Architeture, Econometrics}
 
-		\end{itemize}
+		\secitem{Phillip O. Berry Academy of Technology}
+			{Diploma, NAF Certificate}
+			{2015}{2019}
+			{}
+	\end{itemize}
 
-	\item[]  
-		\ressubheading{Participant}{Lenovo Scholars Network}{2015 - 2019}
 
-		\begin{itemize}
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\secheading{Employment Experience}
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\begin{itemize}
+		\secitem{Software Engineer Intern}
+			{Cruise | Mapping}
+			{Aug. 2022}{Dec. 2022}
+			{Serving as the ground-truth for the vehicles, the Mapping team spans both product and car side in providing navigation knowledge and intelligence.}
 
-			\resitem{National mobile app development competition hosted by Lenovo.}
+		\secitem{Software Engineer Intern}
+			{Lyft | Driver Experience--Driver Productivity}
+			{May 2022}{Aug. 2022}
+			{Driver Experience aims to win driver preference by providing superior transparency and control. Amongst an 8.8\% increase in driver scheduled rides takeups by implementing an entrypoint in the unified schedule, I drove the prioritized implementation of bringing upfront pay swap notifications to parity with non-upfront pay and implemented new reasons to improve visibility into the reason a driver was swapped.}
 
-			\resitem{In 2018 we created Joey, A Just-in-Time, On-Demand Delivery Service. This application went to compete nationally. \texttt{https://devpost.com/software/joey}}
+		\secitem{Software Development Engineer Intern}
+			{Amazon | Alexa Skills Kit}
+			{Jan. 2022}{Apr. 2022}
+			{As a member of the Vertical Kits team, I extended the Offers product to include the ability to reference by name instead of position, a highly requested feature by end users. This included designing a new schema for third-party partners to provide offer names and custom synonyms while also leveraging the Alexa Voice Service—an internal NLP product—to extend that synonyms list automatically.}
 
-			\resitem{In 2017 we created AirQI, which sought to educate the populace about air quality and how imperative it is.}
+		\secitem{Software Engineer}
+			{Celera Technologies}
+			{Jun. 2021}{Jan. 2022}
+			{Using \textbf{Python 3.9}, I architected automated systems that provide the ability to rapidly validate custom Integrated Circuits, generate mission-critical documentaiton for engineers and customers, and on average save 120 hours per week on once-manual tasks.}
 
-		\end{itemize}
+		\secitem{Teaching Assistant}
+			{Elon University}
+			{Aug. 2021}{Dec. 2021}
+			{Served as the only TA for 118 students in the introductory Computer Science course.}
 
-\end{itemize}
+		\secitem{Resident Assistant}
+			{Elon University Residence Life}
+			{Feb. 2020}{May 2021}
+
+		\secitem{Oral Historian}
+			{Elon University Belk Library Archives \& Special Collections}
+			{Oct. 2019}{May 2020}
+
+		\secitem{Founder}
+			{Eclect, Inc.}
+			{Nov. 2017}{Aug. 2019}
+			{
+				\begin{itemize}
+					\openitem{}{Founded with 2 other high school students, Eclect---which stems from the word eclectic---is a Start-Up company with the intent to change the world, no matter how clich\'e that may sound.}
+					\openitem{\bf Nutra:}{Nutra is a service created to improve the way you utilize grocery lists using the power of Machine Learning.}
+				\end{itemize}
+			}
+
+		\secitem{Intelligence Intern}
+			{Executive Partnership for Integrated Collaboration}
+			{Jun.}{Aug. 2018}
+			{
+				\begin{itemize}
+					\openitem{}{Learned the Intelligence Cycle, gathered time-sensitive OSINT (Open Source INTelligence) for various projects, and built and serviced tools used within EPIC’s internal processes and external projects.}
+					\openitem{\bf Tools Used:}{Python, Maltego, Crunchbase, Dun \& Bradstreet, Salesforce, and other OSINT technologies}
+				\end{itemize}
+			}
+
+		\secitem{Cybersecurity Intern}
+			{Technology Partners Inc. d.b.a Imagine Software}
+			{Jun}{Aug. 2017}
+			{
+				\begin{itemize}
+					\openitem{}{Tasked with securing the network, cataloging the various amounts of computers, and installing enterprise-grade anti-virus solutions on macOS machines, remotely, as well as various IT-related projects.}
+					\openitem{\bf Tools Used:}{SAS \& Python (for analysis of events from the SIEM), Redis, and Node.js}
+				\end{itemize}
+			}
+	\end{itemize}
+
+
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\secheading{Extracurriculars}
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+	\begin{itemize}
+		\secitem{President}
+			{Elon Society of Computing}
+			{Apr. 2019}{Jan. 2022}
+			{Serving as President of ESC, I transferred ownership of Courseadvysr to the newly-found ESC Student Development Team and continually led that team in developing new features and services, recreated the event planning to allow students to easily follow a Research or Real World-focused track, and expanded ESC’s reach as a strong department-affiliated organization.}
+		\secitem{Member}
+			{Liberal Arts Forum of Elon University}
+			{2020}{2022}
+			{}
+		
+		\secitem{Member}
+			{Elon Society of Computing}
+			{2020}{2022}
+			{}
+		\secitem{Class President}
+			{Elon University Student Government Association}
+			{Sep. 2019}{May 2020}
+			{
+				\begin{itemize}
+					\openitem{}{Elected President of the Class of 2023 for the 2019-2020 School Year.}
+				\end{itemize}
+			}
+
+		\secitem{Club President}
+			{WakeUp! Club}
+			{2016}{2019}
+			{
+				\begin{itemize}
+					\openitem{}{Attained the position of Club President for the 2017-2018 and 2018-2019 school year. A school club rooted in helping the community “Wake Up” to the problems that affects each and every member. Primarily backed by the North Carolina chapter of Teach For America.}
+				\end{itemize}
+			}
+
+		\secitem{Participant}
+			{Lenovo Scholars Network}
+			{2015}{2019}
+			{
+				\begin{itemize}
+					\openitem{}{National mobile app development competition hosted by Lenovo.}
+					\openitem{}{In 2018 we created Joey, A Just-in-Time, On-Demand Delivery Service. This application went to compete nationally. \texttt{https://devpost.com/software/joey}}
+					\openitem{}{In 2017 we created AirQI, which sought to educate the populace about air quality and how imperative it is.}
+				\end{itemize}
+			}
+	\end{itemize}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\resheading{Volunteer Experience}
+\secheading{Volunteer Experience}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{itemize}
 
-	\item[]
-	  \ressubheading{Equity Leadership Ambassador}{Harvesting Humanity | Harvey B. Gantt Center | Charlotte-Mecklenburg Schools}{2018 - 2019}
-
-	  \begin{itemize}
-
-	    \resitem{Lead \& moderated Martin Luther King Jr. day presenation and conversation on Homelessness in Charlotte, North Carolina.}
-
-	    \resitem{Helped revitalize the historic community of Brookhill and provided the inhabitants with 21st century skills.}
-
-	    \resitem{Lead a district-wide student discussion on the Coretta Scott King Award winning novel ``The Hate U Give''}
-
+	\secitem{Equity Leadership Ambassador}
+		{Harvesting Humanity | Harvey B. Gantt Center | Charlotte-Mecklenburg Schools}
+		{2018}{2019}
+		{
+	  	\begin{itemize}
+		    \openitem{}{Lead \& moderated Martin Luther King Jr. day presenation and conversation on Homelessness in Charlotte, North Carolina.}
+		    \openitem{}{Helped revitalize the historic community of Brookhill and provided the inhabitants with 21st century skills.}
+		    \openitem{}{Lead a district-wide student discussion on the Coretta Scott King Award winning novel ``The Hate U Give''}
 	   \end{itemize}
+	  }
 
-	\item[]
-	  \ressubheading{Guest Lecturer}{Phillip O. Berry Academy of Technology}{2017 - 2019}
+	\secitem{Guest Lecturer}
+		{Phillip O. Berry Academy of Technology}
+		{2017}{2019}
+		{
+		  \begin{itemize}
+		    \openitem{}{Lectured classes and lead discussions with peers on a variety of topics and disciplines. \texttt{https://jumart.in/guest-lectures}}
+		    \openitem{}{Mathematics: Reimann Sums, Derivatives, Antiderivatives / Integrals}
+		    \openitem{}{Computer Science: Python basics, Recursion}
+		  \end{itemize}
+	  }
+	\secitem{Photography Assistant}
+		{Flashes of Hope}
+		{2015}{2019}
+		{
+			\begin{itemize}
+				\openitem{}{Assisted professional photographers in serving children afflicted by cancer and other life-threatening diseases as well as their families by providing portraits of them.}
+			\end{itemize}
+		}
 
-	  \begin{itemize}
-
-	    \resitem{Lectured classes and lead discussions with peers on a variety of topics and disciplines. \texttt{https://jumart.in/guest-lectures}}
-
-	    \resitem{Mathematics: Reimann Sums, Derivatives, Antiderivatives / Integrals}
-
-	    \resitem{Computer Science: Python basics, Recursion}
-
-	  \end{itemize}
-	\item[]
-		\ressubheading{Photography Assistant}{Flashes of Hope}{2015 - 2019}
-
-		\begin{itemize}
-
-			\resitem{Assisted professional photographers in serving children afflicted by cancer and other life-threatening diseases as well as their families by providing portraits of them. }
-
-		\end{itemize}
-
-	\item[]
-
-		\ressubheading{Administrative Assistant}{Catholic Diocese of Charlotte}{Jun - Aug 2016, 2017 Jun - July 2018}
-
-		\begin{itemize}
-
-			\resitem{Assisted with interviewing the less fortunate, filling out documents that would allow the less fortunate to receive food for the month, and completing clerical work that was imperative in keeping the charity running smoothly.}
-
-		\end{itemize}
-	\item[] 
-		\ressubheading{Head Junior Counselor}{Infragard Cybercamp}{July 2015, 2016, 2017, 2018}
-
-		\begin{itemize}
-
-			\resitem{Facilitated activities that showcased cutting edge network security tools, participated in a tight knit team of counselors throughout the week, updated the camps blog daily, and administered a “CTF” (Capture the Flag) competition.}
-
-		\end{itemize}
+	\secitem{Administrative Assistant}
+		{Catholic Diocese of Charlotte}
+		{Jun. - Aug. 2016, 2017 Jun.}{Jul. 2018}
+		{
+			\begin{itemize}
+				\openitem{}{Assisted with interviewing the less fortunate, filling out documents that would allow the less fortunate to receive food for the month, and completing clerical work that was imperative in keeping the charity running smoothly.}
+			\end{itemize}
+		}
+	\secitem{Head Junior Counselor}
+		{Infragard Cybercamp}
+		{Jul.}{Aug. 2015, 2016, 2017, 2018}
+		{
+			\begin{itemize}
+				\openitem{}{Facilitated activities that showcased cutting edge network security tools, participated in a tight knit team of counselors throughout the week, updated the camps blog daily, and administered a “CTF” (Capture the Flag) competition.}
+			\end{itemize}
+		}
 
 \end{itemize}
 
 
 
-\begin{itemize}	
-	\item[]
-		\ressubheading{Hackathons}{A really short amount of time to build something unique with others!}{}
-		\begin{itemize}
-			\resitem{{\bf HackGT 6:} Team Eclect, Vietfu and I. (To be written up)	}
-		\end{itemize}
-\end{itemize}
+% \begin{itemize}	
+% 	\item[]
+% 		\ressubheading{Hackathons}{A really short amount of time to build something unique with others!}{}
+% 		\begin{itemize}
+% 			\openitem{{\bf HackGT 6:} Team Eclect, Vietfu and I. (To be written up)	}
+% 		\end{itemize}
+% \end{itemize}
 
 
 
