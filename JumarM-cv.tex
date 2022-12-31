@@ -1,76 +1,9 @@
-% (c) 2002 Matthew Boedicker <mboedick@mboedick.org> (original author) http://mboedick.org
-% (c) 2003-2007 David J. Grant <davidgrant-at-gmail.com> http://www.davidgrant.ca
-% (c) 2008 Nathaniel Johnston <nathaniel@nathanieljohnston.com> http://www.nathanieljohnston.com
-% (c) 2019 Jumar Martin <jumar@jumart.in> https://jumart.in
-
-%This work is licensed under the Creative Commons Attribution-Noncommercial-Share Alike 2.5 License. To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-sa/2.5/ or send a letter to Creative Commons, 543 Howard Street, 5th Floor, San Francisco, California, 94105, USA.
-
-\documentclass[letterpaper,10pt,draft]{article}
-\newlength{\outerbordwidth}
-\pagestyle{empty}
-\raggedbottom
-\usepackage{fontspec}
-\setmainfont{Avenir}
-\raggedright
-\usepackage[svgnames]{xcolor}
-\usepackage{framed}
-\usepackage{tocloft}
-\usepackage{etoolbox}
-\usepackage{enumitem}
-
-\robustify\cftdotfill
-
-%-----------------------------------------------------------
-%Margin setup
-
-\setlength{\evensidemargin}{-0.25in}
-\setlength{\headheight}{0in}
-\setlength{\headsep}{0in}
-\setlength{\oddsidemargin}{-0.25in}
-\setlength{\paperheight}{11in}
-\setlength{\paperwidth}{8.5in}
-\setlength{\tabcolsep}{0in}
-\setlength{\textheight}{9.5in}
-\setlength{\textwidth}{7in}
-\setlength{\topmargin}{-0.3in}
-\setlength{\topskip}{0in}
-\setlength{\voffset}{0.1in}
-\setlist[itemize]{leftmargin=*}
-
-%-----------------------------------------------------------
-%Custom commands
-\newcommand{\openitem}[2]{\item[] \textbf{#1} #2\vspace{2pt}}
-\newcommand{\secheading}[1]{\vspace{2pt}
-{
-\setlength{\FrameSep}{\outerbordwidth}
-\textbf{\large #1}
-}
-}
-\newcommand{\secsubheading}[4]{
-\vspace{2pt}
-\begin{tabular*}{6.86in}{l@{\cftdotfill{\cftsecdotsep}\extracolsep{\fill}}r}
-\textbf{#1} & #3 -- #4\\
-\textit{#2} \\
-\end{tabular*}
-}
-
-\newcommand{\secitem}[5]{
-\item[]
-\secsubheading{#1}{#2}{#3}{#4}
-\vspace{-10pt}
-\begin{itemize}
-\item[]{#5}
-\end{itemize}
-}
-
-
-%-----------------------------------------------------------
-% the document, itself.
+\documentclass{listofpersonalprofessionalachievements}
 \begin{document}
 
 \begin{tabular*}{7in}{l@{\extracolsep{\fill}}r}
 \textbf{\Large Jumar A. Martin} & \textbf{\today} \\
-jumar@jumart.in | +1 (650) 407-9719 & Fourth-Year CS \& Econ Student
+``With finite time, we continue, with purpose.'' & jumar@jum.ar
 \vspace{8pt}
 \end{tabular*}
 
@@ -81,7 +14,7 @@ jumar@jumart.in | +1 (650) 407-9719 & Fourth-Year CS \& Econ Student
 \secitem{Elon University}
 {B.S. Computer Science, A.B. Economics}
 {2019}{2023}
-{\textbf{Relevant Coursework:} Data Mining \& Machine Learning, Programming Languages, Algorithm Analysis, Database Systems, Organization \& Architeture, Econometrics}
+{}
 
 \secitem{Phillip O. Berry Academy of Technology}
 {Diploma, NAF Certificate}
@@ -95,12 +28,12 @@ jumar@jumart.in | +1 (650) 407-9719 & Fourth-Year CS \& Econ Student
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{itemize}
 \secitem{Software Engineer Intern}
-{Cruise | Mapping}
+{Cruise | Mapping, Data Ingestion}
 {Aug. 2022}{Dec. 2022}
-{Serving as the ground-truth for the vehicles, the Mapping team spans both product and car side in providing navigation knowledge and intelligence.}
+{The Mapping Data Ingestion team owns the story of mapping data from capture to operation. My deliverables focused primarily on improving robustness and resiliency in the pipeline from mapping vehicle to autonomous operations. In tandem with delivering on team-related tasks, I built an offline-first internal tool that centralized company terms. After a company-wide demo, I worked with both Developer Experience, Developer Productivity, and Technical Writing teams to bring it company-wide.}
 
 \secitem{Software Engineer Intern}
-{Lyft | Driver Experience--Driver Productivity}
+{Lyft | Driver Experience, Driver Productivity}
 {May 2022}{Aug. 2022}
 {Driver Experience aims to win driver preference by providing superior transparency and control. Amongst an 8.8\% increase in driver scheduled rides takeups by implementing an entrypoint in the unified schedule, I drove the prioritized implementation of bringing upfront pay swap notifications to parity with non-upfront pay and implemented new reasons to improve visibility into the reason a driver was swapped.}
 
@@ -132,7 +65,7 @@ jumar@jumart.in | +1 (650) 407-9719 & Fourth-Year CS \& Econ Student
 {Nov. 2017}{Aug. 2019}
 {
 \begin{itemize}
-\openitem{}{Founded with 2 other high school students, Eclect---which stems from the word eclectic---is a Start-Up company with the intent to change the world, no matter how clich\'e that may sound.}
+\openitem{}{Founded with 2 other high school students, Eclect---which stems from the word eclectic---is a company with the intent to change the world, no matter how clich\'e that may sound.}
 \openitem{\bf Nutra:}{Nutra is a service created to improve the way you utilize grocery lists using the power of Machine Learning.}
 \end{itemize}
 }
@@ -260,18 +193,5 @@ jumar@jumart.in | +1 (650) 407-9719 & Fourth-Year CS \& Econ Student
 }
 
 \end{itemize}
-
-
-
-% \begin{itemize}	
-% 	\item[]
-% 		\ressubheading{Hackathons}{A really short amount of time to build something unique with others!}{}
-% 		\begin{itemize}
-% 			\openitem{{\bf HackGT 6:} Team Eclect, Vietfu and I. (To be written up)	}
-% 		\end{itemize}
-% \end{itemize}
-
-
-
 
 \end{document}
