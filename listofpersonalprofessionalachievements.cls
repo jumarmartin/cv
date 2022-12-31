@@ -103,4 +103,3 @@
 \vspace{8pt}
 \end{tabular*}
 }
-
