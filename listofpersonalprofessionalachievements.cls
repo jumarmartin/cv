@@ -18,6 +18,7 @@
 \usepackage{framed}
 \usepackage{tocloft}
 \usepackage{etoolbox}
+\usepackage[hidelinks]{hyperref}
 \usepackage{enumitem}
 
 \robustify\cftdotfill
