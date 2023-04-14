@@ -45,16 +45,16 @@
 
 % \openitem builds a free floating item that isn't tied to a particular
 % subheading, only a header.
-% ex. \openitem{Patents}{U.S. 3597875, 133737}
+% ex. \openitem{Patents}{US223898A, US334823}
 % will produce:
-% *Patents* U.S. 3597875, 133737s
+% *Patents* U.S. 3597875, 133737
 \newcommand{\openitem}[2]{\item[] \textbf{#1} #2\vspace{2pt}}
 
 % \secheading creates a heading in the document
 % ex. \secheading{Cool Things I've Done}
 % will produce:
 % *Cool Things I've Done*
-\newcommand{\secheading}[1]{\vspace{2pt}
+\newcommand{\secheading}[1]{\vspace{1pt}
 {
 \setlength{\FrameSep}{\outerbordwidth}
 \textbf{\large #1}
@@ -90,6 +90,11 @@
 \begin{itemize}
 \item[]{#5}
 \end{itemize}
+}
+
+\newcommand{\eduitem}[4]{
+\item[]
+\secsubheading{#1}{#2}{#3}{#4}
 }
 
 % \biodata presents quintessential data like your name, contact info, and a quip about you
